@@ -24,9 +24,13 @@ public class WekaAssignment2609 {
 //        System.out.println(model.trainSet.toSummaryString());
 //        System.out.println(model.testSet.toSummaryString());
 
-        MyDecisionTreeModel model = new MyDecisionTreeModel("C:\\Program Files\\Weka-3-9-6\\data\\iris.arff", "-C 0.25 -M 2",null);
-        model.buildDecisionTree();
-        model.CrossValidationDecisionTree(10);
+//        MyDecisionTreeModel model = new MyDecisionTreeModel("C:\\Program Files\\Weka-3-9-6\\data\\iris.arff", "-C 0.25 -M 2",null);
+//        model.buildDecisionTree();
+//        model.CrossValidationDecisionTree(10);
+//        System.out.println(model);
+
+        MyKMeansModel model = new MyKMeansModel();
+        model.buildKmeansModel("D:\\Hoàng 12208124\\iris_train.arff");
         System.out.println(model);
 
     }

@@ -4,6 +4,7 @@ import jdk.nashorn.internal.runtime.regexp.joni.ast.StringNode;
 import weka.core.Instance;
 import weka.core.Instances;
 import weka.core.converters.ArffSaver;
+import weka.core.converters.ConverterUtils;
 import weka.core.converters.ConverterUtils.DataSource;
 import weka.filters.Filter;
 import weka.filters.unsupervised.attribute.NominalToBinary;
@@ -83,6 +84,11 @@ public class MyKnowledgeModel {
         rs.setInvertSelection(isTest);
         rs.setInputFormat(dataset);
         return  Filter.useFilter(originalSet,rs);
+    }
+
+    public void setTrainSet (String filename) throws Exception{
+        DataSource trainSource = new DataSource(filename);
+        this.trainSet = trainSource.getDataSet();
     }
     @Override
     public String toString(){
